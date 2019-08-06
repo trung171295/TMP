@@ -110,7 +110,7 @@
         &.is-fixed{
             @include transition(transform .4s ease);
             .wrapper-container{
-                height: 150px;
+                height: 80px;
                 .menu-mobile{
                     .logo-mobile{
                         img{
@@ -131,7 +131,7 @@
         }
         .wrapper-container{
             margin-top: 15px;
-            height: 150px;
+            height: 80px;
             .menu-primary{
                 display: none;
             }   
@@ -144,7 +144,7 @@
                         margin: auto;
                     }
                     img{
-                        @include size(90px,60px);
+                        @include size(90px,30px);
                         display: block;
                         margin: auto;
                         &.show{
@@ -172,6 +172,7 @@
                     }
                     .nav-menu-mobile{
                         display: none;
+                        overflow-y: scroll;
                         @include transition(transform .4s ease-in-out);
                         @include transform(translateY(10px));
                         width: 100%;
@@ -271,6 +272,7 @@
         .menu-footer{
             padding: 15px 0;
             .nav-menu-footer{
+                justify-content: center;
                 .nav-item{
                     margin: 15px 10px;
                     width: calc(50% -10px);
@@ -763,7 +765,7 @@
         &.is-fixed{
             @include transition(transform .4s ease);
             .wrapper-container{
-                height: 150px;
+                height: 80px;
                 .menu-mobile{
                     .logo-mobile{
                         img{
@@ -784,7 +786,7 @@
         }
         .wrapper-container{
             margin-top: 15px;
-            height: 150px;
+            height: 80px;
             .menu-primary{
                 display: none;
             }   
@@ -797,7 +799,7 @@
                         margin: auto;
                     }
                     img{
-                        @include size(90px,60px);
+                        @include size(90px,30px);
                         display: block;
                         margin: auto;
                         &.show{
@@ -924,6 +926,7 @@
         .menu-footer{
             padding: 15px 0;
             .nav-menu-footer{
+                justify-content: center;
                 .nav-item{
                     margin: 15px 10px;
                     width: calc(50% -10px);
@@ -1404,4 +1407,19 @@
         }
     }
 }
-
+@include MQ(L){
+    header{
+        .wrapper-container{
+            .menu-primary{
+                .nav-menu-primary{
+                    .nav-item{
+                        padding: 0 1rem;
+                        .link{
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
