@@ -181,3 +181,10 @@ $('.icon_toggle').click(function(){
 });
 
 })
+
+// preloader
+$(window).on('load', function() { 
+  $('.preloader').fadeOut();  
+  $('preloader').delay(350).fadeOut('slow');
+  $('body').delay(350).css({'overflow':'visible'});
+})
