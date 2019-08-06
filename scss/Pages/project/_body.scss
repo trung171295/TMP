@@ -1,0 +1,72 @@
+.body-details{
+    @include flex();
+    .body-raw{
+        width: 50%;
+        background-color: #343434;
+        padding: 90px;
+        color: $color-w;
+        p{
+            @include text(18px 'Montserrat');
+        }
+    }
+    .media{
+        width: 50%;
+        position: relative;
+        margin-bottom: 0;
+        a{
+            display: block;
+            width: 100%;
+        }
+        img{
+            @include img-fit(100%,cover);
+        }
+        &:hover{
+            .button-film,.button-img{
+                &:before{
+                    @include transition(all 0.4s ease-in);
+                    visibility: visible;
+                    opacity: 1;
+                }
+                span{
+                    @include transform(translate(-50%,-50%));
+                    @include transition(all 0.3s ease-out);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        .button-film,.button-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            &:before{
+                @include before(
+                    '',
+                    0,
+                    0,
+                    0,
+                    0,
+                );
+                visibility: hidden;
+                opacity: 0;
+                @include transition(all 0.4s ease-in-out);
+                background-color: rgba($color: #000000, $alpha: .6);
+            }
+            span{
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                top: 50%;
+                left:50%;
+                @include transform(translate(-100%,-50%));
+                @include text(bold 22px 'Montserrat');
+                @include transition(all 0.45s ease-in);
+                text-decoration: underline;
+                color: $color-w;
+            }
+        }
+    }
+}

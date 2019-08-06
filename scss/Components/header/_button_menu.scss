@@ -1,0 +1,41 @@
+.button_toggle{
+  position: relative;
+  @include size(32px,32px);
+  cursor: pointer;
+  &.on{
+    span{
+      &.top{
+        @include transform(rotate(45deg) translate(5px, 5px));
+      }
+      &.middle{
+        opacity: 0;
+        visibility: hidden;
+      }
+      &.bottom{
+        @include transform(rotate(-45deg) translate(7px, -8px));
+      }
+    }
+  }
+  span{
+    position: absolute;
+    left: 0;
+    right: 0;
+    @include size(100%,3px);
+    background-color: $color-b;
+    border-radius: 5px;
+    cursor: pointer;
+    &:focus{
+      outline: none;
+    }
+    &.top{
+      top: 0;
+    }
+    &.middle{
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
+    &.bottom{
+      bottom: 0;
+    }
+  }
+}

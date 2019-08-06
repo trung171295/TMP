@@ -1,0 +1,56 @@
+.project-compare{
+    padding: 30px 0;
+    background-color: #343434;
+    .project-compare-container{
+        .logan{
+            padding: 70px 0; 
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            h3{
+                @include text(42px 'Montserrat',1.3,uppercase);
+                color: $color-w;
+            }
+            p{
+                @include text(18px 'Montserrtat');
+                color: $color-w;
+            }
+        }   
+        .compare{
+            @include flex();
+            margin-bottom: 60px;
+            .compare-item{
+                width: 50%;
+                box-sizing: content-box;
+                .status{
+                    text-align: center;
+                    margin-bottom: 30px;
+                    h2{
+                        @include text(36px 'Montserrat',1.2,uppercase);
+                        margin-bottom: 0;
+                        color: $color-w;
+                    }
+                }
+                figure{
+                    margin-bottom: 0;
+                   margin:0 30px;
+                   position: relative;
+                   overflow: hidden;
+                   height: 600px;
+                   &:hover{
+                    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35);
+                       img{
+                        @include transform(translateY(-50%));
+                        @include transition(all 3000ms ease-out);
+                       }
+                   }
+                    img{
+                        @include img-fit(100%,null);
+                        overflow: hidden;
+                        @include transition(all 0.8s ease-out);
+                    }
+                }
+            }
+        }
+    }
+}

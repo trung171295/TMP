@@ -1,0 +1,37 @@
+.main{
+    padding: 50px 0;
+    .main-wrapper{
+        width: 90%;
+        margin: auto;
+        .title-name{
+            text-align: center;
+            margin-bottom: 35px;
+            h1{
+                @include text(40px 'UTM BryantLG',1.2,uppercase);
+                color: $color-title;
+                margin: 0;
+            }
+        }
+        .summary{
+            text-align: center;
+            p{
+                @include text(bold 14px 'UTM Caviar',26px);
+                color: $color-text-primary;
+                margin-bottom: 0;
+            }
+        }
+        .body{
+            padding: 30px 0;
+            text-align: center;
+            p{
+                margin-bottom: 1.5rem;
+            }
+            img{
+                @include img-fit(null,cover);
+                margin: auto;
+                margin-bottom: 1rem;
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.list-post{
+    background-color: $bg-blogs-new;
+    padding-bottom: 30px;
+    .list-post-wrapper{
+        padding: 45px 0;
+        @include grid(
+            repeat(4,1fr),
+            auto,
+            null,
+            null,
+            20px
+        );
+        grid-row-gap: 2rem;
+        .post-item{
+            background-color: $color-w;
+            width: 100%;
+            @include transform(translateY(0));
+            @include transition(transform .4s ease);
+            &:first-child(){
+                margin-left: 0
+            }
+            &:last-child(){
+                margin-right:0
+            }
+            &:hover{
+                -webkit-transform: translateZ(50px) translateY(-12px);
+                transform: translateZ(50px) translateY(-12px);
+                box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35);
+                @include transform(translateY(-2px));
+                @include transition(transform .4s ease);
+            }
+            .post-item-img{
+                @include size(100%,165px);
+                margin-bottom: 0;
+                img{
+                    @include img-fit(100%,cover);
+                    height: 100%;
+                }
+            }
+            .post-item-text{
+                padding: 25px 15px;
+                text-align: center;
+                .headline{
+                    margin-bottom: 12px;
+                    h3{
+                        @include text(bold 1rem 'UTM BryantLG');
+                        margin-bottom: 0;
+                        a{
+                            text-decoration: none;
+                            color: $color-headline;
+                        }
+                    }
+                }
+                .line{
+                    background-color: #e2e1e1;
+                    border-radius: 5px;
+                    display: block;
+                    margin: auto;
+                    @include size(40%,3px)
+                }
+                .summary{
+                    margin-top: 12px;
+                    p{
+                        @include text(12px 'UTM Caviar');
+                        color: $color-text;
+                    }
+                }
+            }
+        }
+    }
+}

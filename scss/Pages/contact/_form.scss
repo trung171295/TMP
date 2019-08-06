@@ -1,0 +1,86 @@
+.form-contact{
+    form{
+        label{
+            @include text(600 18px 'Montserrat');
+            color: $color-b;
+            position: relative;
+            margin-bottom: 1rem;
+            &:before{
+                @include before(
+                    '*',
+                    0,
+                    null,
+                    -10px,
+                );
+                color: $color-r;
+                font-weight: normal;
+            }
+        }
+        .multi-row{
+            @include flex();
+            .form-group{
+                margin-right: 10px;
+                width: 50%;
+                &:nth-of-type(2n){
+                    margin-right: 0;
+                }
+                input.form-control{
+                    @include size(100%, 2.5rem);
+                    border-radius: 0;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                span{
+                    @include text(14px 'Montserrat');
+                    color: $color-r;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+        textarea.form-control,select.form-control{
+            border-radius: 0;
+            &:focus{
+                outline: none;
+            }
+        }
+        .form-control{
+            background-color: transparent;
+            @include transition(all 0.4s ease);
+            &:focus{
+                background-color: rgba($color:#eee,$alpha:0.4);
+                border-color: transparent;
+                box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35);
+                @include transform(translateY(-2px) scaleY(1.05));
+                @include transition(all 0.4s ease);
+                ~ .bottom{
+                    transform-origin: bottom left;
+                    @include transform(scaleX(1));
+                    @include transition(transform 0.4s ease-in);
+                }
+            }
+        }
+        textarea.form-control{
+            &:focus{
+                @include transform(translateY(0) scaleY(1));
+            }
+        }
+        .effect{
+            position: relative;
+            .bottom{
+                @include before(
+                    '',
+                    0%,
+                    0,
+                    0
+                );
+                @include size(100%,3px);
+                display: block;
+                background-color: $color-pr;
+                transform-origin: bottom right;
+                @include transform(scaleX(0));
+                @include transition(transform .4s ease-in-out);
+            }
+        }
+    }
+}

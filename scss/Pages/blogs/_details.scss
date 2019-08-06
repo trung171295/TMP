@@ -1,0 +1,161 @@
+.main-body{
+    background-color: $bg-blogs-new;
+    .main-body-wrapper{
+        @include flex();
+        .body-content{
+            padding: 25px 0;
+            width: 75%;
+            .wrapper-content{
+                margin: 0 auto;
+                width: 90%;
+                @include flex(null,center);
+                flex-wrap: wrap;
+            }
+            .headline{
+                background-color: $color-w;
+                border-top: 5px solid $color-title;
+                padding: 25px 0;
+                margin: auto;
+                h1{
+                    @include text(bold 28px 'UTM BryantLG',1.3,uppercase);
+                    color: $color-title;
+                    margin: 0;
+                }
+            }
+            .nav-shared{
+                background-color: #e3e3e3;
+                padding: 18px 0;
+                .name{
+                    position: relative;
+                    padding-right: 10px;
+                    &:before{
+                        @include before(
+                            '',
+                            50%,
+                            100%
+                        );
+                        @include size(1px,80%);
+                        background-color: #c6c6c5;
+                        @include transform(translateY(-40%));
+                    }
+                    h4{
+                        @include text(14px 'UTM Caviar');
+                        color: #020202;
+                        margin: 0;
+                    }
+                }
+                .push-date{
+                    margin-left: 10px;
+                    p{
+                        @include text(12px 'UTM Caviar');
+                        color: #3c3c3c;
+                        margin-bottom: 0;
+                        i,svg{
+                            margin-right: 8px;
+                        }
+                    }
+                }
+                .shared-social{
+                    margin-left: auto;
+                    .nav-shared-social{
+                        li.nav-item{
+                            margin-right: 10px;
+                            a.nav-link{
+                                padding: 0;
+                                color: #9c9a9a;
+                                cursor: pointer;
+                                @include transition(all 0.4s ease-in-out);
+                                &:hover{
+                                    @include transition(all 0.4s ease-in);
+                                    color: $bg-button;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .content{
+                background-color: $color-w;
+                padding: 25px 0;
+                .summary{
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid #e5e3e3;
+                    p{
+                        @include text(bold 16px 'UTM BryantLG',1.2);
+                        color: #020202;
+                    }
+                }
+                .body{
+                    padding: 20px 0;
+                    p{
+                        @include text(14px 'UTM Caviar',20px);
+                        color: #6f6d6d;
+                    }
+                    img{
+                        @include img-fit(null,cover);
+                        display: block;
+                        margin: auto;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+        .sidebar-related{
+            width: 25%;
+            margin-left: 30px;
+        }
+    }
+}
+.modal-social{
+    .modal-content{
+        .modal-header{
+            .modal-title{
+                color: $color-title;
+            }
+            .close{
+                cursor: pointer;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .modal-body{
+            .nav-social-modal{
+                justify-content: center;
+                li.nav-item{
+                    @include size(50px,50px);
+                    margin-right: 1rem;
+                    &:nth-child(1){
+                        a.nav-link{
+                            background-color: rgb(59,89,152);
+                        }
+                    }
+                    &:nth-child(2){
+                        a.nav-link{
+                            background-color: #c23a2b;
+                        }
+                    }
+                    &:nth-child(3){
+                        a.nav-link{
+                            background-color: #008FF3;
+                        }
+                    }
+                    a.nav-link{
+                        @include size(100%,100%);
+                        @include flex(center,center);
+                        color:$color-w;
+                        font-size: 30px;
+                        padding: 0;
+                        border-radius: 50%;
+                        border: 1px solid transparent;
+                        img{
+                            filter:brightness(0) saturate(100%) invert(94%) sepia(100%) saturate(0%) hue-rotate(5deg) brightness(109%) contrast(104%);
+                            object-fit: cover;
+                            @include size(36px,36px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

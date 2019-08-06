@@ -1,0 +1,86 @@
+.introduce{
+    padding:45px 0;
+    margin-bottom: 40px;
+    .introduce-container{
+        @include flex();
+        .advantage{
+            width: 50%;
+            .logan{
+                h2{
+                    @include text(3rem 'Montserrat Light',1.2);
+                    color: $color-b;
+                }
+            }
+            .list-advantage{
+                padding: 25px 0;
+                @include flex();
+                .item-advan{
+                    @include flex();
+                    @include size(calc(100% / 3),auto);
+                    .hover{
+                        display: block;
+                        text-decoration: none;
+                    }
+                    .icon{
+                        margin-bottom: 1rem;
+                        @include size(100%,auto);
+                        @include flex(center,null);
+                        &:hover{
+                            img{
+                                @include transform(rotateY(180deg));
+                                @include transition(transform .3s ease-in-out);
+                                filter:brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(248deg) brightness(100%) contrast(103%);
+                                -webkit-filter:brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(248deg) brightness(100%) contrast(103%);
+                            }
+                        }
+                        img{
+                            @include size(72px,72px);
+                            transform-origin: center;
+                            @include transition(transform .3s ease-in-out);
+                        }
+                    }
+                    .name{
+                        width: 100%;
+                        text-align: center;
+                        h3{
+                            @include text(bold 20px 'Montserrat',null,uppercase);
+                            color: $color-b;
+                        }
+                    }
+                }
+            }
+        }
+        .banner-introduce{
+            width: calc(50% - 1rem);
+            margin-left: 1rem;
+            .sw-introduce{
+                .swiper-slide{
+                    .img{
+                        @include size(100%,auto);
+                        margin-bottom: 0;
+                        img{
+                            @include img-fit(100%,cover);
+                            display: block;
+                            margin: auto;                            
+                        }
+                    }
+                }
+            }
+            .pagi-introduce{
+                display: block;
+                margin: auto;
+                margin-top: 15px;
+                position: static;
+                .swiper-pagination-bullet{
+                    margin-right: 0.5rem;
+                    background-color: $color-pr;
+                    cursor: pointer;
+                    opacity: 1;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}

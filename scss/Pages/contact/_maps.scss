@@ -1,0 +1,33 @@
+.maps{
+    padding: 30px 0;
+    text-align: center;
+    .title{
+        display: inline-block;
+        margin-bottom: 30px;
+        position: relative;
+        padding: 10px 0;
+        &:before{
+            @include before(
+                '',
+                0,
+                50%
+            );
+            @include size(20%,3px);
+            background-color: #5f0066;
+            @include transform(translateX(-50%));
+        }
+        h2{
+            @include text(26px 'UTM BryantLG',1.2,uppercase);
+            margin: 0;
+            color: #3e3d3e;
+        }
+    }
+    .iframe-maps{
+        padding-bottom: 50px;
+        iframe{
+            @include size(100%,620px);
+            border-top: 1px solid #3e3d3e;;
+            border-bottom: 1px solid #3e3d3e;;
+        }
+    }
+}

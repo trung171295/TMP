@@ -1,0 +1,32 @@
+.descriptions{
+    padding: 70px 0;
+    padding-top: 90px;
+    background-color: $bg-desc;
+    .descriptons-container{
+        .icon-decs{
+            @include flex(center,null);
+            margin-bottom: 30px;
+            img{
+                @include img-fit(null,cover);
+                @include size(95px,95px);
+            }
+        }
+        .headline{
+            text-align: center;
+            margin-bottom: 30px;
+            h3{
+                @include text(bold 28px 'Montserrat',1,uppercase);
+                color: $color-w;
+                margin-bottom: 0;
+            }
+        }
+        .body{
+            padding: 15px 0;
+            color: $color-w;
+            p{
+                @include text(21px 'Montserrat',1.2);
+                color: $color-w;
+            }
+        }
+    }
+}

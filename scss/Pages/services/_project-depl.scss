@@ -1,0 +1,181 @@
+.project-deployed{
+    &.project{
+        .group{
+            .title{
+                h2{
+                    color: $color-b;
+                }
+            }
+            .summary{
+                p{
+                    color: $color-b;
+                }
+            }
+        }
+    }
+    .group{
+        padding: 85px 0;
+        text-align: center;
+        background-color: $bg-group;
+        .title{
+            h2{
+                @include text(36px 'Montserrat',1.2,uppercase);
+                color: $color-w;
+            }
+        }
+        .summary{
+            p{
+                @include text(21px 'Montserrat',1.2);
+                color: $color-w;
+            }
+        }
+    }
+    .list-project-deployed{
+        .sw-deployed{
+            .swiper-slide{
+                a{
+                    text-decoration: none;
+                }
+                figure{
+                    margin-bottom: 0!important;
+                }
+                .project-item{
+                    @include size(100%,auto);
+                    position: relative;
+                    overflow: hidden;
+                    &:hover{
+                        .project-img{
+                            img{
+                                @include transform(scale3d(0.8,0.8,1));
+                                @include transition(transform 0.3s ease);
+                            }
+                        }
+                        .name-project{
+                            visibility: visible;
+                            opacity: 1;
+                            @include transition(opacity 0.35s ease);
+                            &:before{
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                top: 0;
+                                opacity: 1;
+                                visibility: visible;
+                                @include transition(all 0.35s ease);
+                                @include transform(scale3d(1.2,1.2,1));
+                            }
+                        }
+                    }
+                    .project-img{
+                        margin-bottom: 0;
+                        img{
+                            @include img-fit(100%,cover);
+                            @include transition(transform 0.3s ease);
+                            @include transform(scale3d(1,1,1));
+                        }
+                    }
+                    .name-project{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        visibility: hidden;
+                        opacity: 0;
+                        @include flex(center,center,wrap);
+                        @include size(100%,100%);
+                        @include transition(opacity 0.35s ease);
+                        text-align: center;
+                        .name{
+                            position: absolute;
+                            width: 100%;
+                            z-index: 2;
+                            span{
+                                font-size: 26px;
+                                color: #12a3dd;
+                            }
+                            h3{
+                                @include text(bold 22px 'Montserrat',null,uppercase);
+                                color: $color-w;
+                                margin-top: 20px;
+                            }
+                        }
+                        &:before{
+                            @include before(
+                                '',
+                                null,
+                                null,
+                                -200px,
+                                -200px
+                            );
+                            background-color: rgba($color: #000000, $alpha: 0.4);
+                            visibility: hidden;
+                            opacity: 0;
+                            z-index: 1;
+                            @include size(100%,100%);
+                            transform-origin: center center;
+                            @include transform(scale3d(0.5,0.5,1));
+                            @include transition(all 0.35s ease);
+                        }
+                    }
+                }
+            }
+            .next-deployed,.prev-deployed{
+                &:focus{
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+       .swiper-button-white{
+            background-image: none!important;
+            &.next-deployed-lg{
+                &:before{
+                    content: '\f0da';
+                }
+            }
+            &.prev-deployed-lg{
+                &:before{
+                    content: '\f0d9'
+                }
+            }
+            &:before{
+                @include before(
+                    '',
+                    0,
+                    0
+                );
+            }
+            font-size: 88px;
+            color: #f4e1af;
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 900;
+            z-index: 3;
+        }
+    }
+    .branding-do{
+        @include flex();
+        .headline{
+            width: 50%;
+            padding: 50px;
+            text-align: right;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            h3{
+                @include text(58px 'Montserrat',null,uppercase);
+                color: $color-w;
+            }
+        }
+        .summary{
+            width: 50%;
+            padding: 50px;
+            background-color: #343434;
+            p{
+                @include text(18px 'Montserrat');
+                color: $color-w;
+            }
+        }
+    }
+}

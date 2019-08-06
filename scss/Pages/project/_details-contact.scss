@@ -1,0 +1,14 @@
+.details-contact{
+    padding: 60px 0;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .logan{
+        text-align: center;
+        h3{
+            @include text(42px 'Montserrat',1.3,uppercase);
+            color: $color-w;
+        }
+    }
+}

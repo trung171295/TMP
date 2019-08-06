@@ -1,0 +1,66 @@
+.list-product{
+    padding-bottom: 70px;
+    .list-product-wrap{
+        padding: 55px 0;
+        @include grid(
+            repeat(4,1fr),
+            auto,
+            null,
+            null,
+            2rem
+        );
+        .product-item{
+            &:hover{
+                box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+                @include transform(scale(1.1));
+                @include transition(all 0.3s ease);
+                .product-img{
+                    border-color: transparent;
+                }
+                .text{
+                    .name{
+                        h3{
+                            a{
+                                text-shadow: 6px 0 18px rgba(0, 0, 0, 0.35);
+                                color: $color-headline;
+                            }
+                        }
+
+                    }
+                }
+            }
+            .product-img{
+                @include size(100%,180px);
+                border: 1px solid rgb(229, 228, 229);
+                img{
+                    @include img-fit(100%,cover);
+                    height: 100%;
+                }
+            }
+            .text{
+                text-align: center;
+                .name{
+                    h3{
+                        @include text(14px 'UTM Caviar');
+                        a{
+                            text-decoration: none;
+                            color: $color-text;
+                            @include transition(color .5s ease);
+                            &:hover{
+                                text-shadow: 6px 0 18px rgba(0, 0, 0, 0.35);
+                                color: $color-headline;
+                                @include transition(color .5s ease);
+                            }
+                        }
+                    }
+                }
+                .price{
+                    span{
+                        @include text(14px 'UTM Caviar',null,uppercase);
+                        color: $color-price;
+                    }
+                }
+            }
+        }
+    }
+}

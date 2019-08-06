@@ -1,0 +1,121 @@
+footer{
+    .footer-widgets{
+        background-color: $bg-footer;
+        padding: 70px 0;
+        .widgets-container{
+            @include flex();
+            .widgets-item{
+                width: calc(100% / 3);
+                margin:0 30px;
+                text-align: left;
+                .title{
+                    h3{
+                        @include text(bold 21px 'Montserrat',1,uppercase);
+                        color: $color-footer;
+                    }
+                }
+                .content{
+                    p{
+                        font-size: 21px;
+                        color: $color-footer;
+                    }
+                }
+                .list-discover{
+                    .nav-list-discover{
+                        display: block;
+                        .item-discover{
+                            margin-bottom: 10px;
+                            padding-left: 22px;
+                            position: relative;
+                            &:before{
+                                @include before(
+                                    '\f111',
+                                    50%,
+                                    0
+                                );
+                                color: $color-footer;
+                                font-size: 8px;
+                                line-height: 1.2;
+                                @include transform(translateY(-50%));
+                                font-family: 'Font Awesome 5 Pro';
+                                font-weight: 900; 
+                            }
+                            a.nav-link{
+                                @include text(21px 'Montserrat',1.2);
+                                color: $color-footer;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+                .address{
+                    .showroom{
+                        margin-bottom: 30px;
+                        h3{
+                            @include text(bold 21px 'Montserrat',1,capitalize);
+                            color: $color-footer;
+                        }
+                        p{
+                            @include text(21px 'Montserrat');
+                            color: $color-w;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .menu-footer{
+        background-color: $bg-gray;
+        padding: 30px 0;
+        .nav-menu-footer{
+            .nav-item{
+                margin: 0 30px;
+                &:first-child{
+                    margin-left: 0;
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+                a.nav-link{
+                    @include text(bold 21px 'Montserrat Semi',1,uppercase);
+                    color: $color-w;
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .copy-right{
+        padding: 30px 0;
+        background-color: $bg-footer;
+        .cpr-container{
+            @include flex();
+            .cp{
+                p{
+                    @include text(19px 'Montserrat Semi');
+                    color: $color-footer;
+                    margin-bottom: 0;
+                    a{
+                        font-weight: bold;
+                        color: $color-footer;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .social-footer{
+                margin-left: auto;
+                .nav-social-footer{
+                    .nav-item{
+                        margin: 0 1rem;
+                        .nav-link{
+                            padding: 0;
+                            color: $color-footer;
+                            i,svg{
+                                font-size: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

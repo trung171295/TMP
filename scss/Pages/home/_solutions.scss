@@ -1,0 +1,45 @@
+.solutions{
+    padding: 80px 0;
+    background-color: $bg-gray;
+    .question-title{
+        text-align: center;
+        margin-bottom: 55px;
+        h3{
+            @include text(bold 40px 'Montserrat',1.2,uppercase);
+            color: $color-w;
+            margin-bottom: 0;
+        }
+    }
+    .list-solutions{
+        @include flex();
+        margin-bottom: 60px;
+        .solutions-item{
+            width: calc(100% / 3);
+            margin:0 20px; 
+            .icon{
+                margin-bottom: 35px;
+                img{
+                    @include img-fit(null,cover);
+                    height: 165px;
+                    display: block;
+                    margin: auto;
+                }
+            }
+            .text{
+                text-align: center;
+                .headline{
+                    h3{
+                        @include text(bold 25px 'Montserrat',1.2,uppercase);
+                        color: $color-w;
+                    }
+                }
+                .summary{
+                    p{
+                        font-size: 18px;
+                        color: $color-w;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.get-child-group{
+    background-color: #e3e3e3;
+    border-top: 1px solid #a9aaaa;
+    padding: 15px 0;
+    &.product{
+        display: none;
+    }
+    .get-child-group-wrapper{
+        .nav-get-child-group{
+            justify-content: center;
+            li.nav-item{
+                margin:0 30px; 
+                a.nav-link{
+                    padding: 0;
+                    @include text(14px 'UTM BryantLG',26px,uppercase);
+                    @include transition(all .3s ease-out);
+                    color: $color-text-primary;
+                    &.active{
+                        color: $bg-button;
+                        text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 25px 15px rgba(0, 0, 0, 0.3);
+                        i,svg{
+                            opacity: 1;
+                            color: $color-text-primary;
+                        }
+                    }
+                    &:hover{
+                        color: $bg-button;
+                        text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 25px 15px rgba(0, 0, 0, 0.3);
+                        @include transition(all .3s ease-in);
+                        i,svg{
+                            opacity: 1;
+                            color: $color-text-primary;
+                        }
+                    }
+                    i,svg{
+                        margin-right: 10px;
+                        opacity: .5;
+                    }
+                }
+            }
+        }
+    }
+}

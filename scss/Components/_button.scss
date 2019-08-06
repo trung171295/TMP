@@ -1,0 +1,108 @@
+.button-more{
+    .btn-more{
+        display: inline-block;
+        @include text(22px 'Montserrat',1,uppercase,none);
+        @include transition(all 0.4s ease);
+        border: 1px solid $color-w;
+        border-radius: 32px;
+        background-color: transparent;
+        color: $color-w;
+        padding: 16px 30px;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        &:before{
+            @include before(
+                '',
+                null,
+                null,
+                100%,
+                100%
+            );
+            @include size(100%,100%);
+            background-color: $color-w;
+            border-radius: 50%;
+            transform-origin: center;
+            @include transform(translate3d(50%,50%,0) scale3d(0,0,0));
+            @include transition(transform .45s ease-in-out);
+            z-index: -1;
+        }
+        &:hover{
+            color: $color-pr;
+            box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.35);
+            @include transition(all 0.4s ease);
+            &:before{
+                @include transform(translate3d(50%,50%,0) scale3d(15,15,15));
+                @include transition(transform 0.4s ease-in);
+            }
+        }
+    }
+    .btn-contact{
+        font-size: 14px;
+        padding: 14px 40px;
+        &:hover{
+            color: $bg-gray;
+        }
+    }
+}
+.btn-submit{
+    width: 10%;
+    padding: 0.5rem;
+    margin-top: 30px;
+    text-align: center;
+    @include text(14px 'Montserrat',null,uppercase);
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: transparent;
+    color: $color-b;
+    position: relative;
+    position: relative;
+    overflow: hidden;
+    border-style: solid;
+    z-index: 2;
+    @include transition(transform .2s ease-out);
+    &:focus{
+        outline: none;
+    }
+    &:before{
+        @include before(
+            '',
+            null,
+            null,
+            100%,
+            100%
+        );
+        @include size(100%,100%);
+        background-color: $color-pr;
+        border-radius: 50%;
+        transform-origin: center;
+        @include transform(translate3d(50%,50%,0) scale3d(0,0,0));
+        @include transition(transform .45s ease-in-out);
+        z-index: -1;
+    }
+    &:after{
+        @include before(
+            '',
+            -50%,
+            null,
+            null,
+            -50%
+        );
+        z-index: -1;
+        background-color: hsla(0, 0%, 100%, 0.2);
+        width: 1.25em;
+        @include transform(translate3d(-600%, 0, 0) rotate(35deg));
+    }
+    &:hover{
+        color: $color-w;
+        box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.35);
+        &:before{
+            @include transform(translate3d(50%,50%,0) scale3d(15,15,15));
+        }
+        &:after{
+            @include transition (transform 0.45s ease-in-out);
+            transition-delay: .5s;
+            @include transform(translate3d(260%, 0, 0) rotate(35deg));
+        }
+    }
+}
